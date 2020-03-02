@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 const SP = window.SP
-const SPClientPeoplePicker_InitStandaloneControlWrapper = window.SPClientPeoplePicker_InitStandaloneControlWrapper
+//const SPClientPeoplePicker_InitStandaloneControlWrapper = window.SPClientPeoplePicker_InitStandaloneControlWrapper
 
 export default function PeoplePicker() {
 	// Render and initialize the client-side People Picker.
