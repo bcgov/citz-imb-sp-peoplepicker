@@ -3,7 +3,17 @@ import React, { useEffect } from 'react'
 const SP = window.SP
 //const SPClientPeoplePicker_InitStandaloneControlWrapper = window.SPClientPeoplePicker_InitStandaloneControlWrapper
 
-export default function PeoplePicker() {
+const ppLibraries = [
+	{ type: 'text/javascript', src: 'http://localhost:8081/_layouts/15/clienttemplates.js' },
+	{ type: 'text/javascript', src: 'http://localhost:8081/_layouts/15/clientforms.js' },
+	{
+		type: 'text/javascript',
+		src: 'http://localhost:8081/_layouts/15/clientpeoplepicker.js'
+	},
+	{ type: 'text/javascript', src: 'http://localhost:8081/_layouts/15/autofill.js' }
+]
+
+export default function PeoplePicker(props) {
 	// Render and initialize the client-side People Picker.
 	function initializePeoplePicker(peoplePickerElementId) {
 		// Create a schema to store picker properties, and set the properties.
@@ -13,17 +23,20 @@ export default function PeoplePicker() {
 		schema['ResolvePrincipalSource'] = 15
 		schema['AllowMultipleValues'] = true
 		schema['MaximumEntitySuggestions'] = 50
-		schema['Width'] = '280px'
+		schema['Width'] = '400px'
 
 		// Render and initialize the picker.
 		// Pass the ID of the DOM element that contains the picker, an array of initial
 		// PickerEntity objects to set the picker value, and a schema that defines
 		// picker properties.
-		SPClientPeoplePicker_InitStandaloneControlWrapper(
-			peoplePickerElementId,
-			null,
-			schema
-		)
+		setTimeout(() => {
+			// eslint-disable-next-line
+			SPClientPeoplePicker_InitStandaloneControlWrapper(
+				peoplePickerElementId,
+				null,
+				schema
+			)
+		}, 1000)
 	}
 
 	// Query the picker for user information.
@@ -71,24 +84,10 @@ export default function PeoplePicker() {
 	}
 
 	useEffect(() => {
-
 		//append libraries needed for peoplepicker
-		const ppLibraries = [
-			// { type: 'text/javascript', src: '/_layouts/15/sp.core.js' },
-			// { type: 'text/javascript', src: '/_layouts/15/sp.runtime.js' },
-			// { type: 'text/javascript', src: '/_layouts/15/sp.js' },
-			// { type: 'text/javascript', src: '/_layouts/15/clienttemplates.js' },
-			// { type: 'text/javascript', src: '/_layouts/15/clientforms.js' },
-			// {
-			// 	type: 'text/javascript',
-			// 	src: '/_layouts/15/clientpeoplepicker.js'
-			// },
-			// { type: 'text/javascript', src: '/_layouts/15/autofill.js' }
-		]
-
 		ppLibraries.forEach(library => {
-			const head = document.getElementsByName('head')[0]
-			const element = document.createElement('link')
+			const head = document.getElementsByTagName('head')[0]
+			const element = document.createElement('script')
 			element.type = library.type
 			element.src = library.src
 			head.appendChild(element)
@@ -96,28 +95,31 @@ export default function PeoplePicker() {
 
 		// Specify the unique ID of the DOM element where the
 		// picker will render.
-		initializePeoplePicker('peoplePickerDiv')
+		// eslint-disable-next-line
+		ExecuteOrDelayUntilScriptLoaded(() => {
+			initializePeoplePicker('peoplePickerDiv')
+		}, 'sp.core.js')
 
 		return () => {}
 	}, [])
 
 	return (
 		<div>
-			<div id='peoplePickerDiv'></div>
-			<div>
+			<div id="peoplePickerDiv"></div>
+			{/* <div>
 				<br />
 				<input
-					type='button'
-					value='Get User Info'
-					onClick='getUserInfo()'></input>
+					type="button"
+					value="Get User Info"
+					onClick={getUserInfo}></input>
 				<br />
 				<h1>User info:</h1>
-				<p id='resolvedUsers'></p>
+				<p id="resolvedUsers"></p>
 				<h1>User keys:</h1>
-				<p id='userKeys'></p>
+				<p id="userKeys"></p>
 				<h1>User ID:</h1>
-				<p id='userId'></p>
-			</div>
+				<p id="userId"></p>
+			</div> */}
 		</div>
 	)
 }
