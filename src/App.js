@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import PeoplePicker from './components/PeoplePicker'
+import PeoplePicker from './components/SPpplPicker'
 
 function App() {
 	return (
