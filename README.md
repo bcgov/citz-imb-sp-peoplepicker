@@ -6,6 +6,7 @@ In development environment, you must include the following javascript libraries 
 localhost:8081 should be a proxy to your production (dev) environment
 
 ```html
+<link rel="stylesheet" type="text/css" href="./PeoplePicker.css" />
 <script
 	type="text/javascript"
 	src="http://localhost:8081/_layouts/15/init.js"
