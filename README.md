@@ -1,3 +1,42 @@
+## SharePoint 2016 PeoplePicker
+
+### Development
+
+In development environment, you must include the following javascript libraries in your index.html header:
+
+```html
+<script
+	type="text/javascript"
+	src="http://localhost:8081/_layouts/15/init.js"
+></script>
+<script
+	type="text/javascript"
+	src="http://localhost:8081/_layouts/15/1033/initstrings.js"
+></script>
+<script
+	type="text/javascript"
+	src="http://localhost:8081/_layouts/15/1033/strings.js"
+></script>
+<script
+	type="text/javascript"
+	src="http://localhost:8081/_layouts/15/MicrosoftAjax.js"
+></script>
+<script
+	type="text/javascript"
+	src="http://localhost:8081/_layouts/15/sp.core.js"
+></script>
+<script
+	type="text/javascript"
+	src="http://localhost:8081/_layouts/15/sp.runtime.js"
+></script>
+<script
+	type="text/javascript"
+	src="http://localhost:8081/_layouts/15/sp.js"
+></script>
+```
+
+##
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

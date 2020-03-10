@@ -36,7 +36,7 @@ export default function PeoplePicker(props) {
 				null,
 				schema
 			)
-		}, 1000)
+		}, 5000)
 	}
 
 	// Query the picker for user information.
@@ -100,7 +100,7 @@ export default function PeoplePicker(props) {
 			initializePeoplePicker('peoplePickerDiv')
 		}, 'sp.core.js')
 
-		return () => {}
+		return () => { }
 	}, [])
 
 	return (

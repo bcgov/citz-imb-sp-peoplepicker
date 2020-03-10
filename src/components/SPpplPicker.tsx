@@ -17,7 +17,7 @@ interface SPpplPickerProps {
 const GetPPScriptFiles: any = (filename: any) => {
   const scriptEle = document.createElement("script");
   scriptEle.setAttribute("type", "text/javascript");
-  scriptEle.setAttribute("src", "/_layouts/15/" + filename);
+  scriptEle.setAttribute("src", "http://localhost:8081/_layouts/15/" + filename);
   document.getElementsByTagName("head")[0].appendChild(scriptEle);
 };
 

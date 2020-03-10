@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
-import PeoplePicker from './components/SPpplPicker'
+import PeoplePicker from './components/PeoplePicker'
 
 function App() {
 	return (
-			<PeoplePicker />
+		<PeoplePicker pLabel={'fred'} pDivId={'fredd'} />
 	)
 }
 
