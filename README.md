@@ -3,6 +3,7 @@
 ### Development
 
 In development environment, you must include the following javascript libraries in your index.html header:
+localhost:8081 should be a proxy to your production (dev) environment
 
 ```html
 <script
