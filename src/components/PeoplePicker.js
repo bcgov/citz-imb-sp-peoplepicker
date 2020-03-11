@@ -69,9 +69,5 @@ export default function PeoplePicker({ schema, elementName, getUserInfo }) {
 		}
 	}, [])
 
-	return (
-		<div>
-			<div id={elementName}></div>
-		</div>
-	)
+	return (<div id={elementName}></div>)
 }
