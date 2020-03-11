@@ -35,6 +35,9 @@ localhost:8081 should be a proxy to your production (dev) environment
 	type="text/javascript"
 	src="http://localhost:8081/_layouts/15/sp.js"
 ></script>
+<script type="text/javascript">
+	var dev = true
+</script>
 ```
 
 ##

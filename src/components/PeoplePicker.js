@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 
-//const SP = window.SP
 const dev = window.dev
 
 const ppLibraries = [
@@ -25,50 +24,6 @@ const ppLibraries = [
 export default function PeoplePicker({ schema, elementName, getUserInfo }) {
 	let loadDelay = 0
 	if (dev) loadDelay = 1000
-
-	// Query the picker for user information.
-	// function getUserInfo() {
-	// 	// Get the people picker object from the page.
-	// 	var peoplePicker = this.SPClientPeoplePicker.SPClientPeoplePickerDict
-	// 		.peoplePickerDiv_TopSpan
-
-	// 	// Get information about all users.
-	// 	var users = peoplePicker.GetAllUserInfo()
-	// 	var userInfo = ''
-	// 	for (var i = 0; i < users.length; i++) {
-	// 		var user = users[i]
-	// 		for (var userProperty in user) {
-	// 			userInfo += userProperty + ':  ' + user[userProperty] + '<br>'
-	// 		}
-	// 	}
-	// 	document.getElementById('resolvedUsers').innerHtml(userInfo)
-
-	// 	// Get user keys.
-	// 	var keys = peoplePicker.GetAllUserKeys()
-	// 	document.getElementById('userKeys').innerHtml(keys)
-
-	// 	// Get the first user's ID by using the login name.
-	// 	getUserId(users[0].Key)
-	// }
-
-	// Get the user ID.
-	// function getUserId(loginName) {
-	// 	var context = new SP.ClientContext.get_current()
-	// 	this.user = context.get_web().ensureUser(loginName)
-	// 	context.load(this.user)
-	// 	context.executeQueryAsync(
-	// 		Function.createDelegate(null, ensureUserSuccess),
-	// 		Function.createDelegate(null, onFail)
-	// 	)
-	// }
-
-	// function ensureUserSuccess() {
-	// 	document.getElementById('userId').innerHtml(this.user.get_id())
-	// }
-
-	// function onFail(sender, args) {
-	// 	alert('Query failed. Error: ' + args.get_message())
-	// }
 
 	useEffect(() => {
 		//append libraries needed for peoplepicker
