@@ -1,3 +1,4 @@
+![Lifecycle:Dormant](https://img.shields.io/badge/Lifecycle-Dormant-ff7f2a)
 ## SharePoint 2016 PeoplePicker
 
 ### Development
